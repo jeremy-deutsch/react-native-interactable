@@ -133,8 +133,26 @@ declare module 'react-native-interactable' {
       style?: ViewStyle;
     }
 
+    class View extends React.Component<IInteractableView, {}> {
+      setVelocity(params: {
+        x?: number;
+        y?: number;
+      }): void;
+
+      snapTo(params: {
+        index?: number;
+      }): void;
+
+      changePosition(params: {
+        x?: number;
+        y?: number;
+      }): void;
+
+      bringToFront(): void;
+    }
+
     interface IInteractable {
-      View: new () => React.Component<IInteractableView, {}>;
+      View: View;
     }
   }
 
